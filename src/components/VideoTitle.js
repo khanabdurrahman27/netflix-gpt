@@ -1,4 +1,5 @@
 import React from 'react'
+import useMovieTrailer from '../hooks/useMovieTrailer'
 
 const VideoTitle = ({title,overview}) => {
   return (
