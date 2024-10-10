@@ -49,21 +49,21 @@ const Header = () => {
     dispatch(changeLanguage(e.target.value));
    }
   return (
-    <div className='absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between'>
-      <img className='w-44' src={LOGO}
+    <div className='flex flex-col md:flex-row justify-between px-5 py-2 absolute bg-gradient-to-b from-black w-full z-10'>
+      <img className='w-40 mx-auto md:mx-0' src={LOGO}
       alt='logo'/>
-  {user &&( <div className='flex p-2'>
-    {showGptSearch && (<select className='p-2 m-2 bg-gray-900 text-white' onChange={handleLanguageChange}>
+  {user &&( <div className='flex p-2 justify-between'>
+    {showGptSearch && (<select className=' bg-white px-4 py-1 md:m-4 m-2 text-black rounded-md font-semibold' onChange={handleLanguageChange}>
       {SUPPORTED_LANGUAGES.map((lang) => (<option key={lang.identifier} value={lang.identifier}>{lang.name}</option>
     ))}
     </select>
   )}
-    <button className='py-2 px-4 mx-4 my-2 bg-purple-800 text-white rounded-lg' onClick={handleGptSearchClick}>{showGptSearch ? "Homepage" : "GPT Search"}</button>
+    <button className='border border-solid border-white bg-purple-700 px-7 py-1 md:m-4 m-2 text-white rounded-md font-semibold' onClick={handleGptSearchClick}>{showGptSearch ? "Homepage" : "GPT Search"}</button>
     <img 
-    className='w-12 h-12'
+    className='hidden md:block w-12 h-12'
     alt='usericon' 
     src={user?.photoURL}/>
-    <button onClick={handleSignOut} className=' font-bold text-white'>(Sign Out)</button>
+    <button onClick={handleSignOut} className='bg-red-500 text-white px-4 py-1 m-2 md:px-4 md:py-1 md:m-4 rounded-md'>(Sign Out)</button>
   </div>)}
     </div>
   );

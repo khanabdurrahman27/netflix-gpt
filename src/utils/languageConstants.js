@@ -7,8 +7,10 @@ const lang = {
     search: "खोज",
     gptSearchPlaceholder:"आज आप क्या देखना चाहेंगे?",
   },
-  spanish: "buscar",
+  spanish:{ 
+    search: "buscar",
   gptSearchPlaceholder:"¿Qué te gustaría ver hoy?",
+  }
 };
 
 export default lang;
